@@ -48,17 +48,26 @@ include_directories(include
   ${PROJECT_SOURCE_DIR}
 )
 
+# x3|x5|x86
+set(PREFIX_PATH x3)
+set(SYS_ROOT ${CMAKE_SYSROOT})
+
 if(PLATFORM_X3)
   message("build platform X3")
   set(SYS_ROOT ${CMAKE_SYSROOT})
+  set(PREFIX_PATH x3)
 elseif(PLATFORM_Rdkultra)
   message("build platform Rdkultra")
+elseif(PLATFORM_X5)
+  message("build platform X5")
+  set(PREFIX_PATH x5)
 elseif(PLATFORM_X86)
   message("build platform X86")
   message("THIRD_PARTY is " ${THIRD_PARTY})
   add_definitions(-DPLATFORM_X86)
   set(SYS_ROOT ${THIRD_PARTY})
   link_directories(${THIRD_PARTY}/usr/lib)
+  set(PREFIX_PATH x3)
 else()
   message("invalid platform, build platform X3 default")
   set(SYS_ROOT ${CMAKE_SYSROOT})
@@ -71,6 +80,7 @@ include_directories(
 )
 link_directories(
   ${SYS_ROOT}/usr/lib/hbbpu/
+  ${SYS_ROOT}/usr/lib/hbmedia/
 )
 
 add_definitions(-DSHARED_MEM_ENABLED)
@@ -115,7 +125,17 @@ install(
 )
 
 install(DIRECTORY
-  ${PROJECT_SOURCE_DIR}/config/
+  ${PROJECT_SOURCE_DIR}/config/${PREFIX_PATH}/
+  DESTINATION lib/${PROJECT_NAME}/config/
+)
+
+install(DIRECTORY
+  ${PROJECT_SOURCE_DIR}/config/images
+  DESTINATION lib/${PROJECT_NAME}/config/
+)
+
+install(FILES
+  ${PROJECT_SOURCE_DIR}/config/centernet.yaml
   DESTINATION lib/${PROJECT_NAME}/config/
 )
 
