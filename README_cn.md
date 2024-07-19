@@ -85,9 +85,9 @@ OpenCV用于图像处理。
 ## 开发环境
 
 - 编程语言: C/C++
-- 开发平台: X3/X86
-- 系统版本：Ubuntu 20.0.4
-- 编译工具链:Linux GCC 9.3.0/Linaro GCC 9.3.0
+- 开发平台: X3/X5/X86
+- 系统版本：Ubuntu 20.04.0/Ubuntu 22.04.0
+- 编译工具链:Linux GCC 9.3.0/Linaro GCC 11.4.0
 
 ## 编译
 
@@ -275,7 +275,7 @@ cp -r install/lib/mono3d_indoor_detection/config/ .
 
 示例中读取本地图片推理的结果会渲染到图片上，并且保存在当前目录的result目录下。
 
-
+![img](./img/centernet_render.jpeg)
 
 
 # 常见问题

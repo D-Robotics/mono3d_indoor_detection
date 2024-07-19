@@ -84,9 +84,9 @@ OpenCV is used for image processing.
 ## Development Environment
 
 - Programming Language: C/C++
-- Development Platform: X3/X86
-- System Version: Ubuntu 20.0.4
-- Compilation Toolchain: Linux GCC 9.3.0 / Linaro GCC 9.3.0
+- Development Platform: X3/X5/X86
+- System Version: Ubuntu 20.04.0
+- Compilation Toolchain: Linux GCC 9.3.0 / Linaro GCC 11.4.0
 
 ## Compilation
 
@@ -269,5 +269,7 @@ The above log snippet captures the processing results of a frame, indicating tha
 providing three-dimensional information, distance, and rotation angle for the trash can.
 
 In the example, the result of inference on a locally read image is rendered on the image and saved in the "result" directory in the current path.
+
+![img](./img/centernet_render.jpeg)
 
 # Frequently Asked Questions
