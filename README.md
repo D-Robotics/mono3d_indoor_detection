@@ -2,7 +2,7 @@ English| [简体中文](./README_cn.md)
 
 # Function Introduction
 
-The mono3d_indoor_detection package is an example of indoor 3D object detection algorithm developed using the hobot_dnn package, which utilizes a 3D detection model and indoor data on the Horizon Sunrise X3 development board for model inference with the BPU processor.
+The mono3d_indoor_detection package is an example of indoor 3D object detection algorithm developed using the hobot_dnn package, which utilizes a 3D detection model and indoor data on the RDK X3 development board for model inference with the BPU processor.
 The 3D detection model is related to sensors and sensor parameters. The performance may vary under different sensor and parameter settings. Therefore, this package does not directly subscribe to topics of type sensors/msg/Image by default, but conducts inference by reading local images to detect object categories and 3D positioning information. The AI information will be published through topics, and the results will also be rendered and saved on images in the 'result' directory during program execution.
 
 The supported indoor object detection categories of the algorithm are as follows:
@@ -75,7 +75,7 @@ ROS packages:
 - ai_msgs
 - OpenCV
 
-dnn_node is a package that performs model inference using the BPU processor on the Horizon X3 development board and is defined in hobot_dnn.
+dnn_node is a package that performs model inference using the BPU processor on the RDK X3 development board and is defined in hobot_dnn.
 
 ai_msgs is a custom message format used to publish inference results after algorithm model inference, and the ai_msgs package is defined in hobot_msgs.
 
@@ -162,7 +162,7 @@ Supports compiling on X3 Ubuntu system and cross-compiling using docker on a PC.
 
 ## Run
 
-After successful compilation, copy the generated install path to the Horizon X3 development board (if compiling on X3, ignore the copying step), and execute the following command to run:
+After successful compilation, copy the generated install path to the RDK X3 development board (if compiling on X3, ignore the copying step), and execute the following command to run:
 
 ### **X3 Ubuntu**
 

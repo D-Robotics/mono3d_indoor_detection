@@ -2,7 +2,7 @@
 
 # 功能介绍
 
-mono3d_indoor_detection package是使用hobot_dnn package开发的室内物体3D检测算法示例，在地平线旭日X3开发板上使用3D检测模型和室内数据利用BPU处理器进行模型推理。
+mono3d_indoor_detection package是使用hobot_dnn package开发的室内物体3D检测算法示例，在RDK X3开发板上使用3D检测模型和室内数据利用BPU处理器进行模型推理。
 3D检测模型与sensor以及sensor参数相关，在不同sensor不同参数情况下展示出来的效果不一样，因此本package默认并不直接订阅sensors/msg/Image类型的话题，而是通过读取本地图片的形式进行推理，检测出物体的类别以及3D定位信息，将AI信息通过话题发布的同时会将结果渲染在图片上保存在程序运行的result目录。
 
 算法支持的室内物体检测类别如下：
@@ -76,7 +76,7 @@ ros package：
 - ai_msgs
 - OpenCV
 
-dnn_node是在地平线旭日X3开发板上利用BPU处理器进行模型推理的package，定义在hobot_dnn中。
+dnn_node是在RDK X3开发板上利用BPU处理器进行模型推理的package，定义在hobot_dnn中。
 
 ai_msgs为自定义的消息格式，用于算法模型推理后，发布推理结果，ai_msgs package定义在hobot_msgs中。
 
@@ -165,7 +165,7 @@ OpenCV用于图像处理。
 
 ## 运行
 
-编译成功后，将生成的install路径拷贝到地平线旭日X3开发板上（如果是在X3上编译，忽略拷贝步骤），并执行如下命令运行：
+编译成功后，将生成的install路径拷贝到RDK X3开发板上（如果是在X3上编译，忽略拷贝步骤），并执行如下命令运行：
 
 ### **X3 Ubuntu**
 
