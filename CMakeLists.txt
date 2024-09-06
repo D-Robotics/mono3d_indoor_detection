@@ -77,9 +77,11 @@ endif()
 message("CMAKE_SYSROOT is " ${CMAKE_SYSROOT})
 include_directories(
   ${SYS_ROOT}/usr/include/
+  ${SYS_ROOT}/usr/hobot/include/
 )
 link_directories(
   ${SYS_ROOT}/usr/lib/hbbpu/
+  ${SYS_ROOT}/usr/hobot/lib/
   ${SYS_ROOT}/usr/lib/hbmedia/
 )
 
