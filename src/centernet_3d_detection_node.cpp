@@ -30,6 +30,7 @@
 
 #include "dnn_node/dnn_node.h"
 #include "dnn_node/util/image_proc.h"
+#include "opencv2/imgproc/types_c.h"
 
 CenterNet3DDetectionNode::CenterNet3DDetectionNode(const std::string &node_name,
                                      const NodeOptions &options)
